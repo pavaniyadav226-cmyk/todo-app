@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Tasks</h1>
+    <p id="status" class="status" role="alert" hidden></p>
+
+    <form id="task-form" class="add" autocomplete="off">
+      <label for="task-input" class="visually-hidden">New task</label>
+      <input id="task-input" type="text" placeholder="What needs doing?" maxlength="200" required>
+      <button type="submit">Add task</button>
+    </form>
+
+    <nav id="filters" class="filters" aria-label="Filter tasks">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="active" aria-pressed="false">Active</button>
+      <button type="button" data-filter="completed" aria-pressed="false">Completed</button>
+    </nav>
+
+    <ul id="task-list" class="list"></ul>
+    <p id="empty" class="empty" hidden></p>
+
+    <footer class="footer">
+      <span id="count">0 tasks left</span>
+      <span class="actions">
+        <button type="button" id="export" class="link">Export</button>
+        <button type="button" id="import" class="link">Import</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+      </span>
+      <button type="button" id="clear-completed" class="link">Clear completed</button>
+    </footer>
+    <p class="hint">Double-click a task to edit. Enter saves, Esc cancels.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
